@@ -7,6 +7,11 @@ task :test do
   ruby Dir.glob("test/*")
 end
 
+desc "Run specs" 
+task :spec do
+  sh "spec spec/* --format specdoc --color"
+end
+
 desc "Build the gem"
 task :build do
   sh "gem build #$gem_name.gemspec"
